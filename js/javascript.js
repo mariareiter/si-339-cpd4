@@ -10,13 +10,13 @@ if (prefersReducedMotion) {
     
 }
 
-// BUTTON TO SHOW MORE OR LESS PHOTOS IN GALLERY 
+
 function showMorePhotos() {
     const gallery = document.querySelector('#gallery');
     const button = document.querySelector('.ShowMoreButton');
     
     // Toggle visibility of additional photos
-    const hiddenPhotos = gallery.querySelectorAll('a:nth-child(n+3)');
+    const hiddenPhotos = gallery.querySelectorAll('a:nth-child(n+9)');
     
     if (hiddenPhotos[0].style.display === 'none' || !hiddenPhotos[0].style.display) {
         hiddenPhotos.forEach(photo => {
@@ -47,32 +47,3 @@ document.querySelectorAll('img').forEach(img => {
         }
     };
 });
-
-// Collapsible buttons for summary and gallery functions --> events called in html
-function toggleGallery(button) {
-    const galleryImages = document.getElementById('gallery-images');
-    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-  
-    if (isExpanded) {
-        galleryImages.classList.remove('show');
-        button.setAttribute('aria-expanded', 'false');
-        button.textContent = 'Show';
-    } else {
-        galleryImages.classList.add('show');
-        button.setAttribute('aria-expanded', 'true');
-        button.textContent = 'Hide';
-    }
-  }
-
-  function toggleSummary() {
-    let hiddenText = document.getElementById('hidden-summary');
-    let btnText = document.getElementById('toggle-summary-btn');
-    
-    if (hiddenText.style.display === "none") {
-        hiddenText.style.display = "inline";
-        btnText.textContent = "Hide";
-    } else {
-        hiddenText.style.display = "none";
-        btnText.textContent = "Show More";
-    }
-    }
