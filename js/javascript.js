@@ -16,7 +16,7 @@ function showMorePhotos() {
     const button = document.querySelector('.ShowMoreButton');
     
     // Toggle visibility of additional photos
-    const hiddenPhotos = gallery.querySelectorAll('a:nth-child(n+9)');
+    const hiddenPhotos = gallery.querySelectorAll('a:nth-child(n+3)');
     
     if (hiddenPhotos[0].style.display === 'none' || !hiddenPhotos[0].style.display) {
         hiddenPhotos.forEach(photo => {
