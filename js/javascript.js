@@ -47,3 +47,23 @@ document.querySelectorAll('img').forEach(img => {
         }
     };
 });
+
+function darkMode() {
+    // Toggle the 'dark-mode' class on the body element
+    document.body.classList.toggle("dark-mode");
+
+    // Optionally store the user's preference in localStorage
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+}
+
+// Check the user's saved theme preference when the page loads
+window.onload = function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+};
